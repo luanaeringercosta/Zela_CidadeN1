@@ -34,7 +34,7 @@ const criarBanco = async () => {
 
 
 
-    const checagem = await db.get(`SELECT COUNT (*) As total FROM incidentes`);
+    const checagem = await db.get(`SELECT COUNT(*) As total FROM incidentes`);
 
     if(checagem.total === 0) {
         await db.exec(`
@@ -95,11 +95,10 @@ await db.run(`
     console.log("Registro do ID 2 removido");
 
     //Relatorio/SELECT final
-    console.log("Relatório Atualizado(FINAL)")
+    console.log("Relatório Atualizado(FINAL)");
 
     const resultadoFinal = await db.all(`SELECT * FROM incidentes`);
-    console.table(resultadoFinal)
-
+    console.table(resultadoFinal);
+return db
 };
-
-criarBanco();
+module.exports = { criarBanco }
