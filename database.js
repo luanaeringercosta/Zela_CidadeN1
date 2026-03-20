@@ -14,7 +14,7 @@ const criarBanco = async () => {
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         tipo_problema TEXT,         --O que aconteceu (buraco, assalto)
         localizacao TEXT,           --Onde aconteceu (Rua, Bairro)
-        descricao TEXT              --Detalhes da reclamação
+        descricao TEXT,              --Detalhes da reclamação
         prioridade TEXT,            --Baixa, Média ou Alta
         nome_solicitante TEXT,      --Quem está avisando
         data_registro TEXT,         --Data em formato (ex: 16/03 16.03)
@@ -45,7 +45,7 @@ const criarBanco = async () => {
 
             ("Iluminação", "São Paulo (SP)", "Poste Queimado", "Média", "Ana Clara", "16/03/2026", "18:00"),
 
-            ("Galho de arvore na rede eletrica", "Tamoios", "Rua sem energia", "Alta", "José Bonifácio", "16/03/2026", "13:00"),
+            ("Galho de arvore na rede eletrica", "Tamoios", "Rua sem energia", "Alta", "José Bonifácio", "16/03/2026", "13:00")
 
 
             `);
@@ -102,3 +102,4 @@ await db.run(`
 return db
 };
 module.exports = { criarBanco }
+criarBanco()
